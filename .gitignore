@@ -5,3 +5,5 @@ npm-debug.log
 yarn-error.log
 static/res
 .vscode
+jsconfig.json
+typings/wx.d.ts
