@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development",
-    "lint": "eslint --ext .js --ext .jsx --ext .vue src/",
-    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src",
+    "lint": "eslint --ext .js --ext .jsx --ext .html --ext .vue src/",
+    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .html --ext .vue src",
     "precommit": "npm run lint-fix"
   },
   "author": "teabyii <teabyii@gmail.com>",

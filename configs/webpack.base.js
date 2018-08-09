@@ -31,9 +31,12 @@ let base = {
       // },
       {
         enforce: 'pre',
-        test: /\.jsx?$/,
+        test: /\.(js|jsx|html|vue)?$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
+        options: {
+          emitWarning: true
+        }
       },
       {
         test: /\.jsx?/,

@@ -30,6 +30,10 @@ const config = merge.smart(baseConfig, {
   devServer: {
     port: '8080',
     hot: false,
+    overlay: { // 这里配置 html 页面是否显示 eslint 错误信息蒙版
+      errors: true,
+      warnings: true
+    },
     before(app){
       app.get('/api/test.json', function(req, res) {
         res.json({ code: 200, message: 'hello world' })

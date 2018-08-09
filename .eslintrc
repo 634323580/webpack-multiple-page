@@ -1,12 +1,10 @@
 {
   "extends": "standard",
+  "plugins": [
+    "html"
+  ],
   "parser": "babel-eslint",
-  "parserOptions": {
-  },
-  "globals": {
-  },
-  "env": {
-  },
   "rules": {
+    "no-new": "off"
   }
 }
