@@ -39,7 +39,7 @@ let base = {
         }
       },
       {
-        test: /\.jsx?/,
+        test: /\.(js|jsx)?/,
         include: [
           path.resolve(__dirname, '../src'),
         ],

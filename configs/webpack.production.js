@@ -7,7 +7,7 @@ const baseConfig = require('./webpack.base')
 const config = merge.smart(baseConfig, {
   module: {
     rules: [{
-        test: /\.(less|css)$/,
+        test: /\.(scss|sass|css)$/,
         include: [
           path.resolve(__dirname, '../src'),
         ],
@@ -19,7 +19,7 @@ const config = merge.smart(baseConfig, {
                 minimize: true
               }
             },
-            'less-loader',
+            'sass-loader',
             'postcss-loader'
           ],
         }),

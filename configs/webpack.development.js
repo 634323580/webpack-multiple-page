@@ -6,21 +6,15 @@ const baseConfig = require('./webpack.base')
 const config = merge.smart(baseConfig, {
   module: {
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   test: /\.jsx?$/,
-      //   exclude: /node_modules/,
-      //   loader: "eslint-loader",
-      // },
       {
-        test: /\.(less|css)$/,
+        test: /\.(scss|sass|css)$/,
         include: [
           path.resolve(__dirname, '../src'),
         ],
         use: [
           'style-loader',
           'css-loader',
-          'less-loader',
+          'sass-loader',
           'postcss-loader'
         ],
       },
