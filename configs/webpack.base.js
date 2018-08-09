@@ -23,6 +23,18 @@ let base = {
 
   module: {
     rules: [
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(js|jsx)?/,
+      //   loader: 'eslint-loader',
+      //   exclude: /node_modules/
+      // },
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
       {
         test: /\.jsx?/,
         include: [

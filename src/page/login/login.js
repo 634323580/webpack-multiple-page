@@ -1,3 +1,3 @@
 import $ from 'jquery'
 require('./style.less')
-console.log($)
+console.log($ )
