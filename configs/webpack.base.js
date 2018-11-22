@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+var colors = require('colors');
 
 // index: './src/index.js',
 // login: './src/login.js'
@@ -95,6 +95,7 @@ let base = {
 }
 
 appConfig['pages'].forEach(item => {
+  console.log(`生成${item}.html页面`['green']);
   const htmlPlugin = new HtmlWebpackPlugin({
       filename: `${item}.html`,
       template: `./src/page/${item}/${item}.html`,
