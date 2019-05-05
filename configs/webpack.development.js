@@ -11,6 +11,9 @@ const config = merge.smart(baseConfig, {
         include: [
           path.resolve(__dirname, '../src'),
         ],
+        // css-loader 是处理css文件中的url()等
+        // style-loader 将css插入到页面的style标签
+        // sass-loader 是将sass文件编译成css
         use: [
           'style-loader',
           'css-loader',
