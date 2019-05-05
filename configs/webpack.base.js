@@ -1,4 +1,5 @@
 const path = require('path')
+// 如果我们的文件名或者路径会变化，例如使用 [hash] 来进行命名，那么最好是将 HTML 引用路径和我们的构建结果关联起来，这个时候我们可以使用 html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 var colors = require('colors');
 
@@ -22,15 +23,12 @@ let base = {
   },
 
   module: {
+    // 可以用于配置哪些模块文件的内容不需要进行解析。对于一些不需要解析依赖（即无依赖） 的第三方大型类库等，可以通过这个字段来配置，以提高整体的构建速度。
+    // 使用 noParse 进行忽略的模块文件中不能使用 import、require、define 等导入机制。
+    // noParse: /jquery|lodash/, // 正则表达式
     rules: [
-      // {
-      //   enforce: 'pre',
-      //   test: /\.(js|jsx)?/,
-      //   loader: 'eslint-loader',
-      //   exclude: /node_modules/
-      // },
       {
-        enforce: 'pre',
+        enforce: 'pre', // 指定为前置类型,确保在babel-loader处理之前使用
         test: /\.(js|jsx|html|vue)?$/,
         exclude: /node_modules/,
         loader: "eslint-loader",
@@ -59,6 +57,8 @@ let base = {
         test: /\.(eot|ttf|woff|svg)$/,
         use: 'file-loader'
       },
+      // 在前端项目的样式中总会使用到图片，虽然我们已经提到 css-loader 会解析样式中用 url() 引用的文件路径，但是图片对应的 jpg/png/gif 等文件格式，webpack 处理不了。是的，我们只要添加一个处理图片的 loader 配置就可以了，现有的 file-loader 就是个不错的选择。
+      // file-loader 可以用于处理很多类型的文件，它的主要作用是直接输出文件，把构建后的文件路径返回。配置很简单，在 rules中添加一个字段，
       {
         test: /\.(png|jpg|gif)$/,
         use: [

@@ -1,5 +1,6 @@
 const path = require('path')
 const merge = require('webpack-merge')
+// 如果需要单独把 CSS 文件分离出来，我们需要使用 extract-text-webpack-plugin 插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 const baseConfig = require('./webpack.base')
